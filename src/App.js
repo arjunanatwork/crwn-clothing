@@ -9,7 +9,7 @@ import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
 import SignInAndSignUpPage from "./pages/sign-in-sign-up/sign-in-sign-up.component";
 import Header from "./components/header/header.component";
-import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
+import {auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser }  from "./redux/user/user.action";
 import CheckoutPage from "./pages/checkout/checkout.component";
 
@@ -28,9 +28,8 @@ class App extends React.Component {
                         id:snapshot.id, ...snapshot.data()
                     })
                 })
-            } else {
-                setCurrentUser(userAuth);
             }
+            setCurrentUser(userAuth);
         })
     }
 
